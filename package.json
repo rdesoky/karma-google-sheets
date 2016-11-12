@@ -1,0 +1,17 @@
+{
+  "name": "karma-google-sheets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/index_spec.js"
+  },
+  "keywords": [],
+  "author": "Ramy Eldesoky <rdesoky@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^1.0.0",
+    "google-spreadsheet": "^2.0.3"
+  }
+}
