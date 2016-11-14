@@ -8,11 +8,11 @@ var GoogleSpreadsheet = require('google-spreadsheet');
 var async = require('async');
 
 module.exports = {
-    "framework:gsheets":['factory',function(config){
+    "framework:google-sheets":['factory',function(config){
         var gsh_folder = config.basePath + '/test/.gsheets';
 
         //Preprocessor will read the document parameters from the written content and replace it with data from Google APIs
-        config.preprocessors[gsh_folder + '/*.gsh'] = ['gsheets'];
+        config.preprocessors[gsh_folder + '/*.gsh'] = ['google-sheets'];
 
         //link the documents JSON to debug.html
         config.files.unshift({pattern: gsh_folder + '/*.gsh', included: true, served: true, watched: false});
@@ -32,7 +32,7 @@ module.exports = {
             }
         }
     }],
-    "preprocessor:gsheets":['factory',function(config){
+    "preprocessor:google-sheets":['factory',function(config){
         return function(content,file,onFinish){
             var doc_ref = file.path.match(/(\w+)\.gsh$/)[1];
             file.path += '.js';// append .js to script->src
