@@ -70,7 +70,7 @@ function openDoc(docID, auth_params, callback){
             if(auth_params) {
                 doc.useServiceAccountAuth(auth_params , next);
             }else{
-                next('Authentication data is missing');
+                next();//only public and published sheets would be accessed
             }
         },
         function(next){
